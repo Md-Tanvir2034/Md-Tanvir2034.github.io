@@ -759,12 +759,17 @@
         </div>
       </div>
 
-      <!-- This form opens the visitor's email app with the message filled in. -->
-      <form class="glass contact reveal d1" id="contactForm" data-email="mdtanvirmahmud2034@gmail.com">
-        <label>Your name<input type="text" id="cName" required placeholder="Your name"></label>
-        <label>Your email<input type="email" id="cEmail" required placeholder="you@example.com"></label>
-        <label>Message<textarea id="cMsg" required placeholder="Write your message..."></textarea></label>
-        <button class="btn primary" type="submit">Send message</button>
+            <!-- Web3Forms Contact Form -->
+      <form action="https://api.web3forms.com/submit" method="POST" class="glass contact reveal d1" id="contactForm">
+        
+        <!-- Your Access Key from Web3Forms -->
+        <input type="hidden" name="access_key" value="db12d0bc-39a5-4b04-ae27-b5cfa96fa145">
+        
+        <label>Your name<input type="text" name="name" required placeholder="Your name"></label>
+        <label>Your email<input type="email" name="email" required placeholder="you@example.com"></label>
+        <label>Message<textarea name="message" required placeholder="Write your message..."></textarea></label>
+        
+        <button class="btn primary" type="submit" id="submitBtn">Send message</button>
       </form>
     </div>
   </div>
@@ -847,17 +852,48 @@
     sections.forEach(function (s) { navObs.observe(s); });
   }
 
-  /* ---------- Contact form: opens the visitor's email app ---------- */
-  var form = document.getElementById('contactForm');
+    /* ---------- Contact form: Web3Forms AJAX submission ---------- */
+  const form = document.getElementById('contactForm');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var name = document.getElementById('cName').value;
-    var from = document.getElementById('cEmail').value;
-    var msg = document.getElementById('cMsg').value;
-    var subject = 'Portfolio message from ' + name;
-    var body = msg + '\n\n' + name + '\n' + from;
-    window.location.href = 'mailto:' + form.getAttribute('data-email') +
-      '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    
+    const submitBtn = document.getElementById('submitBtn');
+    const originalText = submitBtn.innerHTML;
+    
+    // Change button text so the user knows it's working
+    submitBtn.innerHTML = "Sending...";
+    submitBtn.disabled = true;
+
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            alert("Message sent successfully! I will get back to you soon.");
+            form.reset(); // Clear the form
+        } else {
+            alert("Error: " + json.message);
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        alert("Something went wrong. Please try again.");
+    })
+    .finally(() => {
+        // Reset button back to normal
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    });
   });
 
   /* ---------- Education cards: pop when tapped or clicked ---------- */
