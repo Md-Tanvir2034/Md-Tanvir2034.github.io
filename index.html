@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
+<!-- ================= [HTML BLOCK 1] HEAD & META ================= -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Md. Tanvir Mahmud Soyad | Portfolio</title>
@@ -22,9 +23,7 @@
 </script>
 
 <style>
-  /* =========================================================
-     THEME COLOURS  (edit these to change the whole palette)
-     ========================================================= */
+  /* ================= [CSS BLOCK 1] THEME COLOURS & VARIABLES ================= */
   :root {
     --bg: #070b1a;
     --text: #e6ebff;
@@ -54,9 +53,7 @@
     --nav-bg: rgba(244, 246, 255, 0.75);
   }
 
-  /* =========================================================
-     BASE
-     ========================================================= */
+  /* ================= [CSS BLOCK 2] BASE STYLES & TYPOGRAPHY ================= */
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
@@ -83,6 +80,7 @@
   }
   @keyframes glowShift { to { transform: scale(1.12) translate(-1.5%, 2%); } }
 
+  /* Utilities */
   .grad {
     background: linear-gradient(90deg, var(--blue), var(--violet) 55%, var(--cyan));
     -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -101,11 +99,11 @@
     border-color: color-mix(in srgb, var(--blue) 55%, var(--border));
     box-shadow: 0 18px 50px color-mix(in srgb, var(--blue) 22%, transparent);
   }
-
   .eyebrow { font-family: var(--font-head); font-size: 0.85rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cyan); margin-bottom: 8px; }
   .section-title { font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.15; margin-bottom: 14px; }
   .section-lead { color: var(--muted); max-width: 640px; margin-bottom: 44px; }
 
+  /* Buttons */
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
     padding: 12px 24px; border-radius: 999px; font-weight: 600; font-size: 0.95rem;
@@ -121,7 +119,6 @@
   .btn.primary:hover { box-shadow: 0 12px 34px color-mix(in srgb, var(--violet) 55%, transparent); }
   .btn.ghost { background: var(--glass); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
   .btn.ghost:hover { background: var(--glass-strong); border-color: var(--blue); }
-
   .tag { font-size: 0.78rem; padding: 3px 12px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); background: var(--glass); }
 
   /* Scroll reveal */
@@ -129,16 +126,13 @@
   .reveal.in { opacity: 1; transform: none; }
   .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
 
-  /* =========================================================
-     NAVBAR
-     ========================================================= */
+  /* ================= [CSS BLOCK 3] NAVBAR ================= */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 68px;
     background: var(--nav-bg); border-bottom: 1px solid var(--border);
     -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
   }
   nav .container { height: 100%; display: flex; align-items: center; justify-content: space-between; }
-  /* Logo: glowing "MT" badge + shimmering animated name */
   .logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; }
   .logo-mark {
     width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center;
@@ -183,9 +177,7 @@
     .nav-links a::after { display: none; }
   }
 
-  /* =========================================================
-     HERO
-     ========================================================= */
+  /* ================= [CSS BLOCK 4] HERO SECTION ================= */
   #home { min-height: 100vh; display: flex; align-items: center; padding-top: 130px; padding-bottom: 70px; }
   .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
   .hello { color: var(--cyan); font-family: var(--font-head); letter-spacing: 0.08em; margin-bottom: 10px; }
@@ -195,7 +187,6 @@
   @keyframes blink { 50% { opacity: 0; } }
   .tagline { color: var(--muted); max-width: 540px; margin-bottom: 30px; font-size: 1.05rem; }
   .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-
   .photo-col { display: grid; place-items: center; }
   .photo { position: relative; width: min(340px, 74vw); aspect-ratio: 1; animation: float 6s ease-in-out infinite; }
   @keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -12px; } }
@@ -216,7 +207,6 @@
   }
   .photo.nophoto img { display: none; }
   .photo.nophoto .initials { display: grid; }
-
   @media (max-width: 880px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
     .photo-col { order: -1; }
@@ -224,9 +214,7 @@
     .hero-btns { justify-content: center; }
   }
 
-  /* =========================================================
-     ABOUT
-     ========================================================= */
+  /* ================= [CSS BLOCK 5] ABOUT SECTION ================= */
   .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: stretch; }
   .about-text { padding: 34px; }
   .about-text p { color: var(--muted); font-size: 1.05rem; }
@@ -240,43 +228,15 @@
   @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } }
   @media (max-width: 520px) { .stat { padding: 16px 8px; } .stat b { font-size: 1.5rem; } .stat span { font-size: 0.78rem; } }
 
-  /* =========================================================
-     VIDEO
-     ========================================================= */
+  /* ================= [CSS BLOCK 6] INTRO VIDEO ================= */
   .video-frame {
     position: relative; max-width: 860px; margin: 0 auto; padding: 8px; border-radius: 26px;
     background: linear-gradient(135deg, color-mix(in srgb, var(--blue) 60%, transparent), color-mix(in srgb, var(--violet) 60%, transparent), color-mix(in srgb, var(--cyan) 50%, transparent));
     box-shadow: 0 24px 70px color-mix(in srgb, var(--violet) 28%, transparent);
   }
   .video-frame video { width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 19px; object-fit: contain; }
-  .video-note { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 16px; }
 
-    /* Quote block (stands alone between sections) */
-  .quote-band { margin-top: -30px; margin-bottom: -30px; position: relative; }
-  .quote-band .quote { margin: 0 auto; }
-  .edu-grid { margin-top: 30px; }
-
-  /* Quote block */
-  .quote { position: relative; max-width: 780px; margin: 0 0 48px; padding: 26px 30px 24px 34px; border-radius: 20px;
-    background: var(--glass); border: 1px solid var(--border); box-shadow: var(--shadow);
-    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); overflow: hidden; }
-  .quote::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
-    background: linear-gradient(var(--blue), var(--violet), var(--cyan)); }
-  .quote::after { content: "\201C"; position: absolute; right: 22px; top: -14px; font-family: var(--font-head);
-    font-size: 7rem; line-height: 1; opacity: 0.12; color: var(--violet); }
-  .quote blockquote { font-family: var(--font-head); font-size: clamp(1.1rem, 2.4vw, 1.4rem); line-height: 1.5; font-style: italic; }
-  .quote figcaption { margin-top: 12px; color: var(--cyan); font-size: 0.9rem; letter-spacing: 0.04em; }
-
-  .honors { display: grid; gap: 16px; align-content: start; }
-  .honor { padding: 20px 22px; display: flex; gap: 16px; align-items: center; }
-  .honor .ic { font-size: 1.6rem; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--glass-strong); border: 1px solid var(--border); flex-shrink: 0; }
-  .honor h4 { font-family: var(--font-head); font-size: 1rem; }
-  .honor p { color: var(--muted); font-size: 0.88rem; }
-  @media (max-width: 880px) { .edu-grid { grid-template-columns: 1fr; } }
-  
-  /* =========================================================
-     SKILLS
-     ========================================================= */
+  /* ================= [CSS BLOCK 7] SKILLS ================= */
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
   .skill-card { padding: 26px; }
   .skill-card h3 { font-family: var(--font-head); font-size: 1.05rem; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
@@ -285,9 +245,7 @@
   .chip { padding: 6px 14px; font-size: 0.9rem; border-radius: 10px; border: 1px solid var(--border); background: var(--glass-strong); transition: transform 0.2s, border-color 0.2s; }
   .chip:hover { transform: translateY(-2px); border-color: var(--cyan); }
 
-  /* =========================================================
-     PROJECTS
-     ========================================================= */
+  /* ================= [CSS BLOCK 8] PROJECTS ================= */
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
   .project { padding: 28px; display: flex; flex-direction: column; }
   .project .num { font-family: var(--font-head); font-size: 2.4rem; font-weight: 700; opacity: 0.25; line-height: 1; margin-bottom: 10px; }
@@ -298,9 +256,7 @@
   .project .link span { transition: transform 0.25s; }
   .project .link:hover span { transform: translateX(5px); }
 
-  /* =========================================================
-     RESEARCH
-     ========================================================= */
+  /* ================= [CSS BLOCK 9] RESEARCH ================= */
   .research { padding: 36px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: start; }
   .research .badge {
     width: 64px; height: 64px; border-radius: 18px; display: grid; place-items: center; font-size: 1.8rem;
@@ -312,10 +268,8 @@
   .research .tags { display: flex; flex-wrap: wrap; gap: 8px; }
   @media (max-width: 640px) { .research { grid-template-columns: 1fr; padding: 26px; } }
 
-  /* =========================================================
-     EDUCATION + HONORS
-     ========================================================= */
-  .edu-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; }
+  /* ================= [CSS BLOCK 10] EDUCATION & HONORS ================= */
+  .edu-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; margin-top: 30px; }
   .col-title { font-family: var(--font-head); font-size: 1.15rem; margin-bottom: 22px; }
   .timeline { position: relative; padding-left: 28px; }
   .timeline::before { content: ""; position: absolute; left: 6px; top: 6px; bottom: 6px; width: 2px; background: linear-gradient(var(--blue), var(--violet), transparent); }
@@ -327,113 +281,61 @@
   .t-item .when { color: var(--cyan); font-size: 0.82rem; letter-spacing: 0.08em; }
   .t-item h4 { font-family: var(--font-head); font-size: 1.05rem; margin: 2px 0 2px; }
   .t-item p { color: var(--muted); font-size: 0.92rem; }
-  /* Tap / click "pop" on education cards */
-  .t-item { cursor: pointer; -webkit-tap-highlight-color: transparent; }
-  .t-item.pop, .honor.pop { animation: pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .honors { display: grid; gap: 16px; align-content: start; }
+  .honor { padding: 20px 22px; display: flex; gap: 16px; align-items: center; }
+  .honor .ic { font-size: 1.6rem; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--glass-strong); border: 1px solid var(--border); flex-shrink: 0; }
+  .honor h4 { font-family: var(--font-head); font-size: 1rem; }
+  .honor p { color: var(--muted); font-size: 0.88rem; }
+  @media (max-width: 880px) { .edu-grid { grid-template-columns: 1fr; } }
 
-  /* Hover "focus" effect: the card under the cursor pops up, the others dim.
-     ".settled" is added by the script once a card has finished its entrance animation. */
-  .t-item.settled, .honor.settled {
-    cursor: pointer;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, filter 0.3s ease,
-                border-color 0.3s ease, box-shadow 0.3s ease;
-    transition-delay: 0s;
-  }
-  @media (hover: hover) {
-    .t-item.settled:hover, .honor.settled:hover {
-      transform: translateY(-4px) scale(1.045);
-      position: relative; z-index: 2;
-      border-color: color-mix(in srgb, var(--blue) 75%, var(--border));
-      box-shadow: 0 22px 55px color-mix(in srgb, var(--violet) 38%, transparent),
-                  0 0 0 1px color-mix(in srgb, var(--cyan) 35%, transparent);
-    }
-    .t-item.settled:hover::before { background: var(--cyan); }
-    .timeline:hover .t-item.settled:not(:hover),
-    .honors:hover .honor.settled:not(:hover) { opacity: 0.55; transform: scale(0.98); filter: saturate(0.7); }
-  }
-  .t-item.settled:active, .honor.settled:active { transform: scale(0.97); }
-  .t-item.pop::before { animation: dotPulse 0.6s ease-out; }
-  @keyframes pop {
-    0%   { transform: scale(1); }
-    35%  { transform: scale(1.06); }
-    65%  { transform: scale(0.985); }
-    100% { transform: scale(1); }
-  }
-  @keyframes dotPulse {
-    0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--cyan) 70%, transparent); }
-    100% { box-shadow: 0 0 0 14px transparent; }
-  }
+  /* Quote block */
+  .quote-band { margin-top: -30px; margin-bottom: -30px; position: relative; }
+  .quote { position: relative; max-width: 780px; margin: 0 auto 48px; padding: 26px 30px 24px 34px; border-radius: 20px;
+    background: var(--glass); border: 1px solid var(--border); box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); overflow: hidden; }
+  .quote::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+    background: linear-gradient(var(--blue), var(--violet), var(--cyan)); }
+  .quote::after { content: "\201C"; position: absolute; right: 22px; top: -14px; font-family: var(--font-head);
+    font-size: 7rem; line-height: 1; opacity: 0.12; color: var(--violet); }
+  .quote blockquote { font-family: var(--font-head); font-size: clamp(1.1rem, 2.4vw, 1.4rem); line-height: 1.5; font-style: italic; }
+  .quote figcaption { margin-top: 12px; color: var(--cyan); font-size: 0.9rem; letter-spacing: 0.04em; }
 
-  /* Same pop + focus effect for the skill cards */
-  .skill-card.pop { animation: pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
-  .skill-card.settled {
-    cursor: pointer; -webkit-tap-highlight-color: transparent;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, filter 0.3s ease,
-                border-color 0.3s ease, box-shadow 0.3s ease;
-    transition-delay: 0s;
-  }
-  @media (hover: hover) {
-    .skill-card.settled:hover {
-      transform: translateY(-4px) scale(1.045);
-      position: relative; z-index: 2;
-      border-color: color-mix(in srgb, var(--blue) 75%, var(--border));
-      box-shadow: 0 22px 55px color-mix(in srgb, var(--violet) 38%, transparent),
-                  0 0 0 1px color-mix(in srgb, var(--cyan) 35%, transparent);
-    }
-    .skills-grid:hover .skill-card.settled:not(:hover) { opacity: 0.55; transform: scale(0.98); filter: saturate(0.7); }
-  }
-  .skill-card.settled:active { transform: scale(0.97); }
-
-  /* Stat cards (CGPA, semester, credits, abstract): same pop + focus effect */
+  /* Card Pop / Click effects */
+  .t-item.pop, .honor.pop, .skill-card.pop { animation: pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
   .stat.pop { animation: pop 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
-  .stat.settled {
-    cursor: pointer; -webkit-tap-highlight-color: transparent;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, filter 0.3s ease,
-                border-color 0.3s ease, box-shadow 0.3s ease;
-    transition-delay: 0s;
-  }
-  @media (hover: hover) {
-    .stat.settled:hover {
-      transform: translateY(-4px) scale(1.06);
-      position: relative; z-index: 2;
-      border-color: color-mix(in srgb, var(--blue) 75%, var(--border));
-      box-shadow: 0 20px 50px color-mix(in srgb, var(--violet) 38%, transparent),
-                  0 0 0 1px color-mix(in srgb, var(--cyan) 35%, transparent);
-    }
-    .stats:hover .stat.settled:not(:hover) { opacity: 0.55; transform: scale(0.97); filter: saturate(0.7); }
-  }
-  .stat.settled:active { transform: scale(0.96); }
-
-  /* Project cards: same pop + focus effect, but gentler */
-  @keyframes popSoft {
-    0%   { transform: scale(1); }
-    35%  { transform: scale(1.03); }
-    65%  { transform: scale(0.995); }
-    100% { transform: scale(1); }
-  }
   .project.pop { animation: popSoft 0.5s cubic-bezier(0.34, 1.4, 0.64, 1); }
-  .project.settled {
+  
+  .t-item.settled, .honor.settled, .skill-card.settled, .stat.settled, .project.settled {
     cursor: pointer; -webkit-tap-highlight-color: transparent;
-    transition: transform 0.35s cubic-bezier(0.34, 1.4, 0.64, 1), opacity 0.3s ease, filter 0.3s ease,
-                border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease, filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     transition-delay: 0s;
   }
+  
   @media (hover: hover) {
+    .t-item.settled:hover, .honor.settled:hover, .skill-card.settled:hover, .stat.settled:hover {
+      transform: translateY(-4px) scale(1.045); position: relative; z-index: 2;
+      border-color: color-mix(in srgb, var(--blue) 75%, var(--border));
+      box-shadow: 0 22px 55px color-mix(in srgb, var(--violet) 38%, transparent), 0 0 0 1px color-mix(in srgb, var(--cyan) 35%, transparent);
+    }
     .project.settled:hover {
-      transform: translateY(-3px) scale(1.02);
-      position: relative; z-index: 2;
+      transform: translateY(-3px) scale(1.02); position: relative; z-index: 2;
       border-color: color-mix(in srgb, var(--blue) 55%, var(--border));
       box-shadow: 0 16px 40px color-mix(in srgb, var(--violet) 24%, transparent);
     }
-    .projects-grid:hover .project.settled:not(:hover) { opacity: 0.8; transform: scale(0.99); filter: saturate(0.85); }
+    /* Dimming siblings */
+    .timeline:hover .t-item.settled:not(:hover), .honors:hover .honor.settled:not(:hover), 
+    .skills-grid:hover .skill-card.settled:not(:hover), .stats:hover .stat.settled:not(:hover), 
+    .projects-grid:hover .project.settled:not(:hover) { opacity: 0.55; transform: scale(0.98); filter: saturate(0.7); }
   }
+  .t-item.settled:active, .honor.settled:active, .skill-card.settled:active, .stat.settled:active { transform: scale(0.97); }
   .project.settled:active { transform: scale(0.985); }
+  .t-item.pop::before { animation: dotPulse 0.6s ease-out; }
+  
+  @keyframes pop { 0% { transform: scale(1); } 35% { transform: scale(1.06); } 65% { transform: scale(0.985); } 100% { transform: scale(1); } }
+  @keyframes popSoft { 0% { transform: scale(1); } 35% { transform: scale(1.03); } 65% { transform: scale(0.995); } 100% { transform: scale(1); } }
+  @keyframes dotPulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--cyan) 70%, transparent); } 100% { box-shadow: 0 0 0 14px transparent; } }
 
-
-
-  /* =========================================================
-     CONTACT
-     ========================================================= */
+  /* ================= [CSS BLOCK 11] CONTACT FORM ================= */
   .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; }
   .contact-links { display: grid; gap: 14px; align-content: start; }
   .c-link { padding: 18px 22px; display: flex; gap: 16px; align-items: center; }
@@ -451,24 +353,50 @@
   form.contact .btn { justify-self: start; }
   @media (max-width: 880px) { .contact-grid { grid-template-columns: 1fr; } }
 
-  footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--muted); font-size: 0.9rem; }
+  /* ================= [CSS BLOCK 12] IPHONE POPUP (TOAST) ================= */
+  .toast { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px;
+    background: rgba(3, 6, 18, 0.45); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+    opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0s linear 0.3s; }
+  .toast.show { opacity: 1; visibility: visible; transition: opacity 0.3s ease; }
+  .toast-card { width: min(300px, 100%); padding: 32px 26px 28px; text-align: center; border-radius: 28px;
+    background: var(--glass-strong); border: 1px solid var(--border); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(24px) saturate(160%); backdrop-filter: blur(24px) saturate(160%);
+    transform: scale(0.6); opacity: 0; }
+  .toast.show .toast-card { animation: toastIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }
+  .toast.hiding .toast-card { animation: toastOut 0.28s ease forwards; }
+  @keyframes toastIn  { from { transform: scale(0.6); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @keyframes toastOut { from { transform: scale(1); opacity: 1; } to { transform: scale(0.9); opacity: 0; } }
+  .toast-icon { width: 84px; height: 84px; margin: 0 auto 16px; display: block; overflow: visible; }
+  .toast-icon circle, .toast-icon path { fill: none; stroke: var(--cyan); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .toast-icon circle { stroke-dasharray: 151; stroke-dashoffset: 151; }
+  .toast-icon .tk, .toast-icon .tx { stroke-dasharray: 50; stroke-dashoffset: 50; display: none; }
+  .toast.ok .toast-icon .tk, .toast.err .toast-icon .tx { display: block; }
+  .toast.err .toast-icon circle, .toast.err .toast-icon path { stroke: #f87171; }
+  .toast.show .toast-icon circle { animation: draw 0.6s 0.15s ease forwards; }
+  .toast.show .toast-icon .tk, .toast.show .toast-icon .tx { animation: draw 0.4s 0.6s ease forwards; }
+  .toast.show .toast-icon { animation: iconPop 0.5s 0.95s ease; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes iconPop { 50% { transform: scale(1.12); } }
+  .toast h4 { font-family: var(--font-head); font-size: 1.25rem; margin-bottom: 6px; }
+  .toast p { color: var(--muted); font-size: 0.95rem; }
 
-  /* =========================================================
-     ACCESSIBILITY: respect "reduce motion"
-     ========================================================= */
+  /* ================= [CSS BLOCK 13] FOOTER & ACCESSIBILITY ================= */
+  footer { border-top: 1px solid var(--border); padding: 30px 0; text-align: center; color: var(--muted); font-size: 0.9rem; }
+  
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .reveal { opacity: 1; transform: none; }
+    .toast-card { transform: none; opacity: 1; }
+    .toast-icon circle, .toast-icon path { stroke-dashoffset: 0 !important; }
   }
 </style>
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= [HTML BLOCK 2] NAVBAR ================= -->
 <nav>
   <div class="container">
-    <!-- EDIT: navbar name. On small phones only "Md. Tanvir" is shown. -->
     <a href="#home" class="logo" aria-label="Md. Tanvir Mahmud Soyad, home">
       <span class="logo-mark">MT</span>
       <span class="logo-text">Md. Tanvir<span class="rest"> Mahmud Soyad</span></span>
@@ -492,47 +420,38 @@
 
 <main>
 
-<!-- ================= 1. HERO ================= -->
+<!-- ================= [HTML BLOCK 3] HERO SECTION ================= -->
 <section id="home">
   <div class="container hero-grid">
     <div>
       <p class="hello reveal">Hello, I'm</p>
-      <!-- EDIT: your name -->
       <h1 class="reveal d1"><span class="grad">Md. Tanvir Mahmud Soyad</span></h1>
-      <!-- EDIT: typing roles are in the script at the bottom (search for "ROLES") -->
       <p class="typing reveal d1"><span id="typed">CSE Undergraduate</span><span class="cursor"></span></p>
-      <!-- EDIT: tagline -->
       <p class="tagline reveal d2">Curious by nature, driven by learning, and passionate about building technology that makes a difference.</p>
       <div class="hero-btns reveal d3">
         <a class="btn primary" href="#intro">▶ Watch Intro</a>
         <a class="btn ghost" href="#projects">View Projects</a>
-        <!-- EDIT: put your CV in the same folder and name it cv.pdf -->
         <a class="btn ghost" href="cv.pdf" download>⬇ Download CV</a>
       </div>
     </div>
-
     <div class="photo-col reveal d2">
       <div class="photo">
         <div class="ring-glow"></div>
         <div class="ring"></div>
-        <!-- EDIT: put your photo in the same folder and name it photo.jpg -->
-        <img src="photo.jpg" alt="Portrait of Md. Tanvir Mahmud Soyad"
-             onerror="this.parentNode.classList.add('nophoto');">
+        <img src="photo.jpg" alt="Portrait of Md. Tanvir Mahmud Soyad" onerror="this.parentNode.classList.add('nophoto');">
         <div class="initials">TM</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= 2. ABOUT ================= -->
+<!-- ================= [HTML BLOCK 4] ABOUT SECTION ================= -->
 <section id="about">
   <div class="container">
     <p class="eyebrow reveal">About me</p>
     <h2 class="section-title reveal">Learning by <span class="grad">understanding</span>, not memorizing</h2>
-
     <div class="about-grid">
       <div class="glass about-text reveal">
-        <!-- EDIT: your about text -->
         <p>I am a Computer Science undergraduate with a strong interest in technology, software development, and artificial intelligence. I enjoy understanding how things work, exploring new technologies, and turning what I learn into practical projects. I prefer solving problems through logical thinking and understanding concepts step by step rather than simply memorizing them. I am continuously working to improve my programming skills and build a strong foundation in computer science, with the long-term goal of becoming an AI engineer.</p>
       </div>
       <div class="glass facts reveal d1">
@@ -542,8 +461,6 @@
         <div class="fact"><small>Long-term goal</small><span>Becoming an AI engineer</span></div>
       </div>
     </div>
-
-    <!-- EDIT: update these numbers when you add projects or awards -->
     <div class="stats">
       <div class="glass stat reveal"><b class="grad">5+</b><span>Projects</span></div>
       <div class="glass stat reveal d1"><b class="grad">3</b><span>Awards</span></div>
@@ -552,28 +469,22 @@
   </div>
 </section>
 
-<!-- ================= 3. INTRO VIDEO ================= -->
+<!-- ================= [HTML BLOCK 5] INTRO VIDEO ================= -->
 <section id="intro">
   <div class="container">
     <p class="eyebrow reveal" style="text-align:center">Introduction</p>
     <h2 class="section-title reveal" style="text-align:center">Meet me in <span class="grad">one minute</span></h2>
     <p class="section-lead reveal" style="text-align:center; margin-left:auto; margin-right:auto">A short video where I introduce myself, my studies and what I want to build.</p>
-
     <div class="video-frame reveal">
-      <!-- EDIT: put your video in the same folder and name it intro.mp4.
-           Optional thumbnail: add poster="thumbnail.jpg" inside the <video> tag.
-           No autoplay: visitors press play themselves. -->
       <video controls preload="metadata" playsinline>
         <source src="intro.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
-    <p class="video-note">If the video does not play, make sure <code>intro.mp4</code> is in the same folder as this page.</p>
   </div>
 </section>
 
-<!-- ================= QUOTE (between Skills and Projects) ================= -->
-<!-- EDIT: quote text and author. To move it, cut this whole block and paste it between any two sections. -->
+<!-- ================= [HTML BLOCK 6] QUOTE BLOCK ================= -->
 <div class="quote-band container">
   <figure class="quote reveal">
     <blockquote>&ldquo;Great things are not done by impulse, but by a series of small things brought together.&rdquo;</blockquote>
@@ -581,14 +492,12 @@
   </figure>
 </div>
 
-<!-- ================= 4. SKILLS ================= -->
+<!-- ================= [HTML BLOCK 7] SKILLS ================= -->
 <section id="skills">
   <div class="container">
     <p class="eyebrow reveal">Skills</p>
     <h2 class="section-title reveal">My <span class="grad">toolkit</span></h2>
     <p class="section-lead reveal">The languages, tools and concepts I work with as an undergraduate.</p>
-
-    <!-- EDIT: add or remove chips inside each group -->
     <div class="skills-grid">
       <div class="glass skill-card hover-lift reveal">
         <h3>Programming</h3>
@@ -618,18 +527,13 @@
   </div>
 </section>
 
-
-
-<!-- ================= 5. PROJECTS ================= -->
+<!-- ================= [HTML BLOCK 8] PROJECTS ================= -->
 <section id="projects">
   <div class="container">
     <p class="eyebrow reveal">Projects</p>
     <h2 class="section-title reveal">Things I have <span class="grad">built</span></h2>
     <p class="section-lead reveal">Academic and personal projects where I practise object-oriented design and application development.</p>
-
-    <!-- EDIT: change text, tags and links. Copy one <article> block to add another project. -->
     <div class="projects-grid">
-
       <article class="glass project hover-lift reveal">
         <div class="num">01</div>
         <h3>E-Course Management System</h3>
@@ -637,7 +541,6 @@
         <div class="tags"><span class="tag">C#</span><span class="tag">OOP</span><span class="tag">SQL</span><span class="tag">Group project</span></div>
         <a class="link" href="https://github.com/Md-Tanvir2034/E-course-Management-System" target="_blank" rel="noopener">View code <span>→</span></a>
       </article>
-
       <article class="glass project hover-lift reveal d1">
         <div class="num">02</div>
         <h3>Anime Watchlist</h3>
@@ -645,7 +548,6 @@
         <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Desktop GUI</span></div>
         <a class="link" href="https://github.com/Md-Tanvir2034/Anime-Watchlist" target="_blank" rel="noopener">View code <span>→</span></a>
       </article>
-
       <article class="glass project hover-lift reveal d2">
         <div class="num">03</div>
         <h3>Employee Payroll System</h3>
@@ -653,23 +555,18 @@
         <div class="tags"><span class="tag">Java</span><span class="tag">OOP</span><span class="tag">Inheritance</span></div>
         <a class="link" href="https://github.com/Md-Tanvir2034/Employee-Payroll-System" target="_blank" rel="noopener">View code <span>→</span></a>
       </article>
-
     </div>
-
-    <!-- Link to all repositories, since there are more projects than cards shown here -->
     <div class="reveal" style="text-align:center; margin-top:34px">
       <a class="btn ghost" href="https://github.com/Md-Tanvir2034?tab=repositories" target="_blank" rel="noopener">See all repositories on GitHub →</a>
     </div>
   </div>
 </section>
 
-<!-- ================= 6. RESEARCH ================= -->
+<!-- ================= [HTML BLOCK 9] RESEARCH ================= -->
 <section id="research">
   <div class="container">
     <p class="eyebrow reveal">Research</p>
     <h2 class="section-title reveal">Published <span class="grad">research abstract</span></h2>
-
-    <!-- EDIT: update the details if needed. If you want to add your exact contribution, write it in the last <p>. -->
     <div class="glass research hover-lift reveal">
       <div class="badge">📄</div>
       <div>
@@ -685,16 +582,14 @@
   </div>
 </section>
 
-<!-- ================= 7 + 8. EDUCATION AND HONORS ================= -->
+<!-- ================= [HTML BLOCK 10] EDUCATION & HONORS ================= -->
 <section id="education">
   <div class="container">
     <p class="eyebrow reveal">Education and honors</p>
     <h2 class="section-title reveal">My <span class="grad">academic journey</span></h2>
-
     <div class="edu-grid">
       <div>
         <h3 class="col-title reveal">Education</h3>
-        <!-- EDIT: update the CGPA and semester here when they change -->
         <div class="timeline">
           <div class="glass t-item hover-lift reveal">
             <span class="when">OCT 2024 - OCT 2028</span>
@@ -713,7 +608,6 @@
           </div>
         </div>
       </div>
-
       <div>
         <h3 class="col-title reveal">Honors and achievements</h3>
         <div class="honors">
@@ -739,16 +633,14 @@
   </div>
 </section>
 
-<!-- ================= 10. CONTACT ================= -->
+<!-- ================= [HTML BLOCK 11] CONTACT FORM ================= -->
 <section id="contact">
   <div class="container">
     <p class="eyebrow reveal">Contact</p>
     <h2 class="section-title reveal">Let's <span class="grad">connect</span></h2>
     <p class="section-lead reveal">Open to learning opportunities, collaboration and conversations about technology and research.</p>
-
     <div class="contact-grid">
       <div class="contact-links">
-        <!-- EDIT: email, GitHub and LinkedIn links -->
         <a class="glass c-link hover-lift reveal" href="mailto:mdtanvirmahmud2034@gmail.com">
           <div class="ic">✉</div><div><small>Email</small><span>mdtanvirmahmud2034@gmail.com</span></div>
         </a>
@@ -762,17 +654,13 @@
           <div class="ic">📍</div><div><small>Location</small><span>Dhaka, Bangladesh</span></div>
         </div>
       </div>
-
-            <!-- Web3Forms Contact Form -->
       <form action="https://api.web3forms.com/submit" method="POST" class="glass contact reveal d1" id="contactForm">
-        
-        <!-- Your Access Key from Web3Forms -->
         <input type="hidden" name="access_key" value="db12d0bc-39a5-4b04-ae27-b5cfa96fa145">
-        
+        <input type="hidden" name="subject" value="New message from your portfolio website">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <label>Your name<input type="text" name="name" required placeholder="Your name"></label>
         <label>Your email<input type="email" name="email" required placeholder="you@example.com"></label>
         <label>Message<textarea name="message" required placeholder="Write your message..."></textarea></label>
-        
         <button class="btn primary" type="submit" id="submitBtn">Send message</button>
       </form>
     </div>
@@ -781,12 +669,25 @@
 
 </main>
 
+<!-- ================= [HTML BLOCK 12] FOOTER & POPUP ================= -->
 <footer>
   <div class="container">&copy; <span id="year">2026</span> Md. Tanvir Mahmud Soyad. Built with HTML, CSS and JavaScript.</div>
 </footer>
 
+<div class="toast" id="toast" role="status" aria-live="polite">
+  <div class="toast-card">
+    <svg class="toast-icon" viewBox="0 0 52 52" aria-hidden="true">
+      <circle cx="26" cy="26" r="24"/>
+      <path class="tk" d="M14 27l8 8 16-17"/>
+      <path class="tx" d="M18 18l16 16M34 18L18 34"/>
+    </svg>
+    <h4 id="toastTitle">Message sent</h4>
+    <p id="toastText"></p>
+  </div>
+</div>
+
 <script>
-  /* ---------- Theme toggle (remembers choice) ---------- */
+  /* ================= [JS BLOCK 1] THEME TOGGLE ================= */
   var root = document.documentElement;
   var themeBtn = document.getElementById('themeBtn');
   function paintThemeIcon() {
@@ -800,16 +701,15 @@
     paintThemeIcon();
   });
 
-  /* ---------- Mobile menu ---------- */
+  /* ================= [JS BLOCK 2] MOBILE MENU ================= */
   var navLinks = document.getElementById('navLinks');
   document.getElementById('menuBtn').addEventListener('click', function () { navLinks.classList.toggle('open'); });
   navLinks.addEventListener('click', function (e) { if (e.target.tagName === 'A') navLinks.classList.remove('open'); });
 
-  /* ---------- Reduced motion check ---------- */
+  /* ================= [JS BLOCK 3] REDUCED MOTION CHECK ================= */
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- Typing animation ---------- */
-  // EDIT (ROLES): change the three roles here
+  /* ================= [JS BLOCK 4] TYPING ANIMATION ================= */
   var ROLES = ['CSE Undergraduate', 'Java Developer', 'Aspiring AI Engineer'];
   var typedEl = document.getElementById('typed');
   var r = 0, c = 0, deleting = false;
@@ -823,14 +723,13 @@
   }
   if (reduceMotion) { typedEl.textContent = ROLES[0]; } else { c = 0; type(); }
 
-  /* ---------- Scroll reveal ---------- */
+  /* ================= [JS BLOCK 5] SCROLL REVEAL ================= */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reduceMotion) {
     var revealObs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) {
           en.target.classList.add('in'); revealObs.unobserve(en.target);
-          // enable the fast hover effect after the slow entrance animation has finished
           if (en.target.matches('.t-item, .honor, .skill-card, .project, .stat')) {
             setTimeout(function () { en.target.classList.add('settled'); }, 1300);
           }
@@ -842,7 +741,7 @@
     reveals.forEach(function (el) { el.classList.add('in'); if (el.matches('.t-item, .honor, .skill-card, .project, .stat')) el.classList.add('settled'); });
   }
 
-  /* ---------- Active section highlight in the navbar ---------- */
+  /* ================= [JS BLOCK 6] ACTIVE NAV HIGHLIGHT ================= */
   var links = document.querySelectorAll('.nav-links a');
   var sections = document.querySelectorAll('main section');
   if ('IntersectionObserver' in window) {
@@ -856,7 +755,26 @@
     sections.forEach(function (s) { navObs.observe(s); });
   }
 
-    /* ---------- Contact form: Web3Forms AJAX submission ---------- */
+  /* ================= [JS BLOCK 7] IPHONE POPUP LOGIC ================= */
+  var toastEl = document.getElementById('toast');
+  var toastTimer;
+  function hideToast() {
+    toastEl.classList.add('hiding');
+    setTimeout(function () { toastEl.classList.remove('show', 'hiding'); }, 280);
+  }
+  function showToast(type, title, text) {
+    clearTimeout(toastTimer);
+    toastEl.classList.remove('show', 'hiding', 'ok', 'err');
+    void toastEl.offsetWidth;
+    toastEl.classList.add(type === 'ok' ? 'ok' : 'err');
+    document.getElementById('toastTitle').textContent = title;
+    document.getElementById('toastText').textContent = text;
+    toastEl.classList.add('show');
+    toastTimer = setTimeout(hideToast, 3200);
+  }
+  toastEl.addEventListener('click', hideToast);
+
+  /* ================= [JS BLOCK 8] FORM SUBMISSION (WEB3FORMS) ================= */
   const form = document.getElementById('contactForm');
   form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -864,7 +782,6 @@
     const submitBtn = document.getElementById('submitBtn');
     const originalText = submitBtn.innerHTML;
     
-    // Change button text so the user knows it's working
     submitBtn.innerHTML = "Sending...";
     submitBtn.disabled = true;
 
@@ -883,28 +800,27 @@
     .then(async (response) => {
         let json = await response.json();
         if (response.status == 200) {
-            alert("Message sent successfully! I will get back to you soon.");
-            form.reset(); // Clear the form
+            showToast('ok', 'Message sent', 'Thank you! I will get back to you soon.');
+            form.reset();
         } else {
-            alert("Error: " + json.message);
+            showToast('err', 'Could not send', json.message || 'Please try again.');
         }
     })
     .catch(error => {
         console.log(error);
-        alert("Something went wrong. Please try again.");
+        showToast('err', 'Something went wrong', 'Please check your connection and try again.');
     })
     .finally(() => {
-        // Reset button back to normal
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
     });
   });
 
-  /* ---------- Education cards: pop when tapped or clicked ---------- */
+  /* ================= [JS BLOCK 9] CARD POP ANIMATION ================= */
   document.querySelectorAll('.t-item, .honor, .skill-card, .project, .stat').forEach(function (card) {
     card.addEventListener('click', function () {
       card.classList.remove('pop');
-      void card.offsetWidth;          // restart the animation if tapped again quickly
+      void card.offsetWidth;
       card.classList.add('pop');
     });
     card.addEventListener('animationend', function (e) {
@@ -912,7 +828,7 @@
     });
   });
 
-  /* ---------- Footer year ---------- */
+  /* ================= [JS BLOCK 10] FOOTER YEAR ================= */
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
