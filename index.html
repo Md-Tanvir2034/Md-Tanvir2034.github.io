@@ -311,12 +311,16 @@
     transition-delay: 0s;
   }
   
-  @media (hover: hover) {
+    @media (hover: hover) {
     .t-item.settled:hover, .honor.settled:hover, .skill-card.settled:hover, .stat.settled:hover {
       transform: translateY(-4px) scale(1.045); position: relative; z-index: 2;
       border-color: color-mix(in srgb, var(--blue) 75%, var(--border));
       box-shadow: 0 22px 55px color-mix(in srgb, var(--violet) 38%, transparent), 0 0 0 1px color-mix(in srgb, var(--cyan) 35%, transparent);
     }
+    
+    /* ADDED THIS LINE HERE */
+    .t-item.settled:hover::before { background: var(--cyan); }
+
     .project.settled:hover {
       transform: translateY(-3px) scale(1.02); position: relative; z-index: 2;
       border-color: color-mix(in srgb, var(--blue) 55%, var(--border));
