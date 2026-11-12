@@ -251,6 +251,29 @@
   .video-frame video { width: 100%; aspect-ratio: 16 / 9; background: #000; border-radius: 19px; object-fit: contain; }
   .video-note { text-align: center; color: var(--muted); font-size: 0.9rem; margin-top: 16px; }
 
+    /* Quote block (stands alone between sections) */
+  .quote-band { margin-top: -30px; margin-bottom: -30px; position: relative; }
+  .quote-band .quote { margin: 0 auto; }
+  .edu-grid { margin-top: 30px; }
+
+  /* Quote block */
+  .quote { position: relative; max-width: 780px; margin: 0 0 48px; padding: 26px 30px 24px 34px; border-radius: 20px;
+    background: var(--glass); border: 1px solid var(--border); box-shadow: var(--shadow);
+    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); overflow: hidden; }
+  .quote::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+    background: linear-gradient(var(--blue), var(--violet), var(--cyan)); }
+  .quote::after { content: "\201C"; position: absolute; right: 22px; top: -14px; font-family: var(--font-head);
+    font-size: 7rem; line-height: 1; opacity: 0.12; color: var(--violet); }
+  .quote blockquote { font-family: var(--font-head); font-size: clamp(1.1rem, 2.4vw, 1.4rem); line-height: 1.5; font-style: italic; }
+  .quote figcaption { margin-top: 12px; color: var(--cyan); font-size: 0.9rem; letter-spacing: 0.04em; }
+
+  .honors { display: grid; gap: 16px; align-content: start; }
+  .honor { padding: 20px 22px; display: flex; gap: 16px; align-items: center; }
+  .honor .ic { font-size: 1.6rem; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--glass-strong); border: 1px solid var(--border); flex-shrink: 0; }
+  .honor h4 { font-family: var(--font-head); font-size: 1rem; }
+  .honor p { color: var(--muted); font-size: 0.88rem; }
+  @media (max-width: 880px) { .edu-grid { grid-template-columns: 1fr; } }
+  
   /* =========================================================
      SKILLS
      ========================================================= */
@@ -406,28 +429,7 @@
   }
   .project.settled:active { transform: scale(0.985); }
 
-  /* Quote block (stands alone between sections) */
-  .quote-band { margin-top: -30px; margin-bottom: -30px; position: relative; }
-  .quote-band .quote { margin: 0 auto; }
-  .edu-grid { margin-top: 30px; }
 
-  /* Quote block */
-  .quote { position: relative; max-width: 780px; margin: 0 0 48px; padding: 26px 30px 24px 34px; border-radius: 20px;
-    background: var(--glass); border: 1px solid var(--border); box-shadow: var(--shadow);
-    -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); overflow: hidden; }
-  .quote::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
-    background: linear-gradient(var(--blue), var(--violet), var(--cyan)); }
-  .quote::after { content: "\201C"; position: absolute; right: 22px; top: -14px; font-family: var(--font-head);
-    font-size: 7rem; line-height: 1; opacity: 0.12; color: var(--violet); }
-  .quote blockquote { font-family: var(--font-head); font-size: clamp(1.1rem, 2.4vw, 1.4rem); line-height: 1.5; font-style: italic; }
-  .quote figcaption { margin-top: 12px; color: var(--cyan); font-size: 0.9rem; letter-spacing: 0.04em; }
-
-  .honors { display: grid; gap: 16px; align-content: start; }
-  .honor { padding: 20px 22px; display: flex; gap: 16px; align-items: center; }
-  .honor .ic { font-size: 1.6rem; width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--glass-strong); border: 1px solid var(--border); flex-shrink: 0; }
-  .honor h4 { font-family: var(--font-head); font-size: 1rem; }
-  .honor p { color: var(--muted); font-size: 0.88rem; }
-  @media (max-width: 880px) { .edu-grid { grid-template-columns: 1fr; } }
 
   /* =========================================================
      CONTACT
